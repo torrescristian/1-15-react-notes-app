@@ -12,9 +12,10 @@ const Container = styled.div`
   }
 
   .btn {
-    min-width: 70px;
-    min-height: 25px;
-    border-radius: 5px;
+    border-radius: 50%;
+    border: unset;
+    width: 50px;
+    height: 50px;
   }
 
   .btn-success {
@@ -24,9 +25,15 @@ const Container = styled.div`
 `;
 
 export default function AddNote() {
+  const handleClickAdd = () => {
+    console.log('handleClickAdd');
+  };
+
   return (
     <Container>
-      <button className="btn btn-success add">Add</button>
+      <button className="btn btn-success add" onClick={handleClickAdd}>
+        +
+      </button>
     </Container>
   );
 }

@@ -1,30 +1,58 @@
-import React, { useState } from 'react';
+// @ts-check
+import React, { useState, useEffect } from 'react';
 import Note from './components/Note';
 import AddNote from './components/AddNote';
 import { nanoid } from 'nanoid';
+import store from 'store';
 
 function App() {
-  const [notes, setNotes] = useState([
-    { id: nanoid(), message: 'Cristian' },
-    { id: nanoid(), message: 'Tomas' },
-    { id: nanoid(), message: 'Torres' },
-  ]);
+  const [notes, setNotes] = useState([]);
+
+  useEffect(function getInitialNotes() {
+    setNotes(store.get('notes') || []);
+  }, []);
+
+  const updateLocalStorage = (newNotes) => {
+    store.set('notes', newNotes);
+  };
 
   const handleDelete = (id) => {
     console.log({ delete: id });
-    setNotes(notes.filter((note) => note.id !== id));
+    const newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes);
+    updateLocalStorage(newNotes);
+  };
+
+  const handleUpdate = (note) => {
+    console.log({ update: note });
+    const newNotes = notes.map((n) => (n.id === note.id ? note : n));
+    setNotes(newNotes);
+    updateLocalStorage(newNotes);
+  };
+
+  const handleAdd = (value) => {
+    const newNotes = [
+      {
+        id: nanoid(),
+        message: value,
+      },
+      ...notes,
+    ];
+    setNotes(newNotes);
+    updateLocalStorage(newNotes);
   };
 
   return (
     <div>
-      <AddNote />
+      <AddNote onCreate={handleAdd} />
       <div>
-        {notes.reverse().map((note, index) => (
+        {notes.map((note, index) => (
           <Note
             key={note.id}
             id={note.id}
             content={note.message}
-            handleDelete={handleDelete}
+            onDelete={handleDelete}
+            onUpdate={handleUpdate}
           />
         ))}
       </div>

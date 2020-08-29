@@ -1,22 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const Container = styled.div`
+  background-color: ${(props) => (props.editable ? 'white' : '#eee')};
+  border-radius: 5px;
+  border: 2px solid ${(props) => (props.editable ? 'mediumseagreen' : 'gray')};
   display: flex;
   flex-direction: column;
   margin: 1rem;
   padding: 1rem;
-  border: 2px solid gray;
-  border-radius: 5px;
-  background-color: #eee;
   position: relative;
 
   .action-container {
-    /* display: flex;
-    flex: 1 1 0%;
-    justify-content: space-around; */
     position: absolute;
   }
 
@@ -50,21 +49,50 @@ const Container = styled.div`
   }
 `;
 
-export default function Note({ id, content, handleDelete }) {
+export default function Note({ id, content, onDelete, onUpdate }) {
+  const contentRef = useRef(null);
+  const [editable, setEditable] = useState(false);
+
+  useEffect(() => {
+    contentRef.current.innerHTML = content;
+  }, []);
+
   return (
-    <Container>
-      <button className="btn btn-warning edit">
+    <Container editable={editable}>
+      <button
+        className="btn btn-warning edit"
+        onClick={() => {
+          if (editable) {
+            onUpdate({
+              id,
+              message: contentRef.current.innerHTML,
+            });
+          }
+
+          if (!editable) {
+            setTimeout(() => {
+              contentRef.current.focus();
+            }, 0);
+          }
+
+          setEditable(!editable);
+        }}
+      >
         <FontAwesomeIcon icon={faPen} />
       </button>
       <button
         className="btn btn-danger delete"
         onClick={() => {
-          handleDelete(id);
+          onDelete(id);
         }}
       >
         <FontAwesomeIcon icon={faTrashAlt} />
       </button>
-      <div className="content">{content}</div>
+      <div
+        ref={contentRef}
+        className="content"
+        contentEditable={editable}
+      ></div>
     </Container>
   );
 }

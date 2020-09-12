@@ -8,12 +8,22 @@ import { useState } from 'react';
 const Container = styled.div`
   background-color: ${(props) => (props.editable ? 'white' : '#eee')};
   border-radius: 5px;
-  border: 2px solid ${(props) => (props.editable ? 'mediumseagreen' : 'gray')};
+  border: 2px solid ${(props) => (props.editable ? 'dodgerblue' : 'gray')};
   display: flex;
   flex-direction: column;
   margin: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   position: relative;
+
+  @media (min-width: 600px) {
+    width: 180px;
+    height: fit-content;
+  }
+
+  .content {
+    overflow-wrap: anywhere;
+    padding: 0.5rem;
+  }
 
   .action-container {
     position: absolute;

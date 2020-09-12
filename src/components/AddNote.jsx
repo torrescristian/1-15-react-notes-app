@@ -8,7 +8,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1rem;
-  padding: 1rem;
+
+  padding: 0.5rem;
   position: relative;
 
   .add {

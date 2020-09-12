@@ -4,6 +4,7 @@ import Note from './components/Note';
 import AddNote from './components/AddNote';
 import { nanoid } from 'nanoid';
 import store from 'store';
+import styled from 'styled-components';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -42,10 +43,19 @@ function App() {
     updateLocalStorage(newNotes);
   };
 
+  const Div = styled.div`
+    @media (min-width: 600px) {
+      .notes-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  `;
+
   return (
-    <div>
+    <Div>
       <AddNote onCreate={handleAdd} />
-      <div>
+      <div className="notes-container">
         {notes.map((note, index) => (
           <Note
             key={note.id}
@@ -56,7 +66,7 @@ function App() {
           />
         ))}
       </div>
-    </div>
+    </Div>
   );
 }
 

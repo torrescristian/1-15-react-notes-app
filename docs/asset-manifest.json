@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/static/js/main.67cd59ac.chunk.js",
-    "main.js.map": "/static/js/main.67cd59ac.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6ee577dc.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6ee577dc.js.map",
-    "static/js/2.a0b1718e.chunk.js": "/static/js/2.a0b1718e.chunk.js",
-    "static/js/2.a0b1718e.chunk.js.map": "/static/js/2.a0b1718e.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.c21e1a9c68eb31a7214fe6dae881241d.js": "/precache-manifest.c21e1a9c68eb31a7214fe6dae881241d.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.5ecd60fb.chunk.css.map": "/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.a0b1718e.chunk.js.LICENSE.txt": "/static/js/2.a0b1718e.chunk.js.LICENSE.txt"
+    "main.css": "https://torrescristian.github.io/1-15-react-notes-app/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "https://torrescristian.github.io/1-15-react-notes-app/static/js/main.b89575c4.chunk.js",
+    "main.js.map": "https://torrescristian.github.io/1-15-react-notes-app/static/js/main.b89575c4.chunk.js.map",
+    "runtime-main.js": "https://torrescristian.github.io/1-15-react-notes-app/static/js/runtime-main.afaedd35.js",
+    "runtime-main.js.map": "https://torrescristian.github.io/1-15-react-notes-app/static/js/runtime-main.afaedd35.js.map",
+    "static/js/2.d3e9577a.chunk.js": "https://torrescristian.github.io/1-15-react-notes-app/static/js/2.d3e9577a.chunk.js",
+    "static/js/2.d3e9577a.chunk.js.map": "https://torrescristian.github.io/1-15-react-notes-app/static/js/2.d3e9577a.chunk.js.map",
+    "index.html": "https://torrescristian.github.io/1-15-react-notes-app/index.html",
+    "precache-manifest.759bf338ab3eb7edd66e5fa7791cb4b0.js": "https://torrescristian.github.io/1-15-react-notes-app/precache-manifest.759bf338ab3eb7edd66e5fa7791cb4b0.js",
+    "service-worker.js": "https://torrescristian.github.io/1-15-react-notes-app/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "https://torrescristian.github.io/1-15-react-notes-app/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.d3e9577a.chunk.js.LICENSE.txt": "https://torrescristian.github.io/1-15-react-notes-app/static/js/2.d3e9577a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6ee577dc.js",
-    "static/js/2.a0b1718e.chunk.js",
+    "static/js/runtime-main.afaedd35.js",
+    "static/js/2.d3e9577a.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.67cd59ac.chunk.js"
+    "static/js/main.b89575c4.chunk.js"
   ]
 }

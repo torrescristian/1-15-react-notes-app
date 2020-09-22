@@ -2,6 +2,8 @@
 
 Tier: 1 — Beginner
 
+## Live Preview: https://torrescristian.github.io/1-15-react-notes-app/
+
 ## Description
 
 Create and store your notes for a later purpose!
